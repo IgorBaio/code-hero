@@ -6,8 +6,13 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
     maxWidth: "100vw",
+    maxHeight: "100vh",
   },
   header: {
+    position: "relative",
+    zIndex: 10,
+  },
+  headerMobile: {
     position: "relative",
     zIndex: 10,
   },
@@ -23,6 +28,15 @@ const useStyles = makeStyles((theme) => ({
       height: "12%",
     },
   },
+  bgHeaderMobile: {
+    top: 0,
+    left: 0,
+    zIndex: 1,
+    backgroundColor: "#fff",
+    position: "absolute",
+    width: "100vw",
+    height: "24%",
+  },
   headerTop: {
     display: "flex",
     justifyContent: "space-between",
@@ -36,6 +50,15 @@ const useStyles = makeStyles((theme) => ({
       padding: 10,
       height: "20%",
     },
+  },
+  headerTopMobile: {
+    marginTop: 14,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: 10,
+    height: "45%",
   },
   logo: {
     marginBottom: "2%",
@@ -67,12 +90,37 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "-4%",
     },
   },
+  candidatoMobile: {
+    color: "#555555",
+    fontWeight: 400,
+    "& strong": {
+      fontWeight: 800,
+    },
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    alignSelf: "flex-start",
+    justifyContent: "space-between",
+    // padding: 10,
+    // height: "20%",
+    // marginRight: -20,
+  },
   userLabel: {
     color: "#555555",
     fontWeight: 400,
     "& strong": {
       fontWeight: 800,
     },
+  },
+  userLabelMobile: {
+    color: "#555555",
+    fontWeight: 400,
+    "& strong": {
+      fontWeight: 800,
+    },
+    width: "100%",
+    alignSelf: "center",
+    textAlign: "center",
   },
   boxCb: {
     marginLeft: 20,
@@ -83,6 +131,16 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginTop: "3%",
     },
+  },
+  boxCbMobile: {
+    padding: 10,
+    backgroundColor: "#F5F5F5",
+    borderRadius: 10,
+    height: "15%",
+    marginTop: "3%",
+    width: "85%",
+    alignItems: "center",
+    justifyContent: "flex-end",
   },
   infoUser: {
     display: "flex",
@@ -95,8 +153,17 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "-3%",
     },
   },
+  infoUserMobile: {
+    display: "flex",
+    flexDirection: "column",
+    marginBottom: "2%",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    marginTop: "-3%",
+  },
 
   subHeader: {
+    marginTop: "2%",
     height: 200,
     display: "flex",
     alignItems: "center",
@@ -113,6 +180,11 @@ const useStyles = makeStyles((theme) => ({
     },
     // "& div": {
     // },
+  },
+  carouselButtons: {
+    backgroundColor: "transparent",
+    borderWidth: 0,
+    color: "#c2c2c2",
   },
   page: {
     position: "relative",

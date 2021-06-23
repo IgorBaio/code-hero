@@ -15,20 +15,18 @@ const useStyles = makeStyles((theme) => ({
   inputWrapper: {
     display: "flex",
     flexDirection: "column",
-    width: "30%",
-    marginTop: 10,
-    marginBottom: 10,
+    width: "70%",
+    margin: 10,
   },
   boxInput: {
     display: "flex",
-    background: "#FFFFFF",
+    backgroundColor: "#FFFFFF",
     borderRadius: 4,
-    border: "2px solid blue",
     opacity: 1,
     padding: "0px 12px",
     whiteSpace: "nowrap",
-    alignItems:'center'
-
+    alignItems:'center',
+    width: '100%',
     
   },
   icon: {

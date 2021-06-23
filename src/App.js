@@ -3,6 +3,7 @@ import { BrowserRouter, Switch,Route } from "react-router-dom";
 
 import Loading from "./components/Loading";
 const Home = lazy(() => import("./screens/Home"));
+const Details = lazy(() => import("./screens/Details"));
 
 const App = () => {
   return (
@@ -13,6 +14,13 @@ const App = () => {
                 path={'/'}
                 exact={true}
                 component={Home}
+              />
+              </Switch>
+            <Switch>
+              <Route
+                path={'/details'}
+                exact={true}
+                component={Details}
               />
               
             </Switch>

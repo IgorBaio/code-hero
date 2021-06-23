@@ -9,8 +9,8 @@ const useStyles = makeStyles((theme) => ({
     // alignSelf: "flex-start",
     [theme.breakpoints.down("sm")]: {
       alignSelf: "center",
+      marginTop:'4%',
       width:'100%',
-      border:'1px solid black'
     },
   },
   pageTitle: {
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxTextInput: {
     display: "flex",
-    maxWidth: "25%",
+    width: "100%",
     alignSelf: "flex-start",
     [theme.breakpoints.down("sm")]: {
       alignSelf: "center",

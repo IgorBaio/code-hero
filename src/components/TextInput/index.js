@@ -16,9 +16,7 @@ export default function TextInput(props) {
 
   return (
     <Box className={styles.inputWrapper}>
-      <InputLabel htmlFor={props.id} style={style.label}>
-        {props.label}
-      </InputLabel>
+      
       <Box className={styles.boxInput}>
         <Input
           inputProps={{
