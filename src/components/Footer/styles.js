@@ -167,15 +167,12 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
-    // alignItems: "center",
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
       padding: 3,
     },
-    // "& div": {
-    // },
   },
   carouselButtons: {
     backgroundColor: "transparent",

@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import DATA from "../../Data";
 import { Typography } from "@material-ui/core";
 import Dimensions from "react-dimensions";
-// import useDimensions from 'use-react-dimensions';
+import Footer from "../../components/Footer";
 
 function App(props) {
   const [dataAux, setDataAux] = useState([]);
@@ -13,38 +13,49 @@ function App(props) {
     width: props.containerWidth,
     height: props.containerHeight,
   });
-  
-  console.log("dimension", dimension);
+  const [nameFilter, setNameFilter] = useState("");
+  const [indexPage, setIndexPage] = useState(0);
+  const [quantityPage, setQuantityPage] = useState(0);
 
-  const getArrayData = (items,  quantity) => {
-   
-      return items.map((i, ind) => {
-        if (ind < quantity) {
-          return (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              <text>{i.name}</text>
-            </div>
-          );
-        }
-        return false;
-      })
-    
-  }
+  const getArrayData = (items, quantity) => {
+    return items.map((i, ind) => {
+      if (ind < quantity) {
+        return (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <text>{i.name}</text>
+          </div>
+        );
+      }
+      return false;
+    });
+  };
 
   useEffect(() => {
     const { results } = DATA.data;
-    const arrTemp = results.filter((it,ind)=>ind<10)
-    const aux = arrTemp.map((item, index) => {
+    setQuantityPage(Array.from(Array(results.length / 10).keys()));
+    let arrayTemp = [];
+
+    if (!!nameFilter) {
+      arrayTemp = results.filter((character, index) =>
+        character.name.toLowerCase().includes(nameFilter.toLowerCase())
+      );
+    } else {
+      arrayTemp = results.filter(
+        (character, index) =>
+          index >= indexPage * 10 && index < (indexPage + 1) * 10
+      );
+    }
+    const aux = arrayTemp.map((hero, index) => {
       const series = (
         <div style={{ alignItems: "center" }}>
-          {item.series?.items.length > 0 ? (
-            item.series?.items?.map((i, ind) => {
+          {hero.series?.items.length > 0 ? (
+            hero.series?.items?.map((i, ind) => {
               if (ind < 3) {
                 return (
                   <div
@@ -68,38 +79,16 @@ function App(props) {
 
       const events = (
         <div style={{ alignItems: "center" }}>
-          {item.events?.items.length > 0 ?
-          getArrayData(item.events.items, 3) :
-          <text>Não há eventos sobre o personagem</text>}
-        </div>
-      );
-      const comics = (
-        <div style={{ alignItems: "center" }}>
-          {item.comics?.items.length > 0 ? (
-            item.comics.items.map((i, ind) => {
-              if (ind < 3) {
-                return (
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                    }}
-                  >
-                    <text>{i.name}</text>
-                  </div>
-                );
-              }
-              return false;
-            })
+          {hero.events?.items.length > 0 ? (
+            getArrayData(hero.events.items, 3)
           ) : (
-            <text>Não há revistas sobre o personagem</text>
+            <text>Não há eventos sobre o personagem</text>
           )}
         </div>
       );
 
       return {
-        id: item.id,
+        id: hero.id,
         character: {
           content: (
             <div
@@ -109,22 +98,35 @@ function App(props) {
                 alignItems: "center",
               }}
               onClick={() => {
-                localStorage.setItem("pathImage", `${item.thumbnail.path}.${item.thumbnail.extension}`);
-                const seriesAux = getArrayData(item.series.items, item.series.items.length)
-                const eventsAux = getArrayData(item.events.items, item.events.items.length)
-                const comicsAux = getArrayData(item.comics.items, item.comics.items.length)
+                localStorage.setItem(
+                  "pathImage",
+                  `${hero.thumbnail.path}.${hero.thumbnail.extension}`
+                );
+                const seriesAux = getArrayData(
+                  hero.series.items,
+                  hero.series.items.length
+                );
+                const eventsAux = getArrayData(
+                  hero.events.items,
+                  hero.events.items.length
+                );
+                const comicsAux = getArrayData(
+                  hero.comics.items,
+                  hero.comics.items.length
+                );
                 localStorage.setItem("series", JSON.stringify(seriesAux));
                 localStorage.setItem("events", JSON.stringify(eventsAux));
                 localStorage.setItem("comics", JSON.stringify(comicsAux));
+                localStorage.setItem("name", hero.name);
                 props.history.push({
                   pathname: "/details",
-                  item,
-                  image: `${item.thumbnail.path}.${item.thumbnail.extension}`,
+                  hero,
+                  image: `${hero.thumbnail.path}.${hero.thumbnail.extension}`,
                 });
               }}
             >
               <img
-                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
                 width={48}
                 height={48}
               />
@@ -132,7 +134,7 @@ function App(props) {
                 component="span"
                 style={{ color: "#666", fontWeight: "bold", marginLeft: 10 }}
               >
-                {item.name}
+                {hero.name}
               </Typography>
             </div>
           ),
@@ -146,7 +148,7 @@ function App(props) {
       };
     });
     setDataAux(aux);
-  }, []);
+  }, [nameFilter, indexPage]);
 
   useEffect(() => {
     setDimension({
@@ -159,12 +161,13 @@ function App(props) {
   if (dimension.width <= 380) {
     return (
       <PageView
-      hasHeader
-      hasFooter={true}
+        hasHeader
+        TesteFooter
         subHeader={
           <SubHeader
             title={"Busca de personagens"}
             subTitle={"Nome do personagem"}
+            setNameFilter={setNameFilter}
           />
         }
         pageContent={
@@ -182,6 +185,7 @@ function App(props) {
             />
           </div>
         }
+        footer={<Footer indexPage={indexPage} setIndexPage={setIndexPage} indexPage={indexPage} />}
       />
     );
   }
@@ -192,6 +196,7 @@ function App(props) {
         <SubHeader
           title={"Busca de personagens"}
           subTitle={"Nome do personagem"}
+          setNameFilter={setNameFilter}
         />
       }
       pageContent={
@@ -220,6 +225,9 @@ function App(props) {
             dataRows={dataAux}
           />
         </div>
+      }
+      footer={
+        <Footer setIndexPage={setIndexPage} quantityPage={quantityPage} indexPage={indexPage} />
       }
     />
   );
