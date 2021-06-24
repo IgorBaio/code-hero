@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import colors from "../../../../utils/colors";
 
 const useStyles = makeStyles((theme) => ({
   boxContainer: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   carouselButtons: {
-    backgroundColor: "#666",
+    backgroundColor: colors.gray,
     borderWidth: 0,
     color: "#c2c2c2",
   },

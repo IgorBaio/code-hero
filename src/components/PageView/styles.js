@@ -1,9 +1,10 @@
 import { makeStyles } from "@material-ui/core/styles";
+import colors from "../../utils/colors";
 
 const useStyles = makeStyles((theme) => ({
   container: {
     margin:0,
-    backgroundColor: "#E2E2E2",
+    backgroundColor: colors.darkSnow,
     width: "100%",
     height: "200vh",
   },
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     zIndex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: colors.white,
     height: "9%",
     position: "absolute",
     width: "100vw",
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     zIndex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: colors.white,
     position: "absolute",
     width: "100vw",
     height: "24%",
@@ -68,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   candidato: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: 400,
     "& strong": {
       fontWeight: 800,
@@ -88,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   candidatoMobile: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: 400,
     "& strong": {
       fontWeight: 800,
@@ -100,14 +101,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   userLabel: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: 400,
     "& strong": {
       fontWeight: 800,
     },
   },
   userLabelMobile: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: 400,
     "& strong": {
       fontWeight: 800,
@@ -119,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
   boxCb: {
     marginLeft: 20,
     padding: 10,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: colors.snow,
     borderRadius: 10,
     height: "15%",
     [theme.breakpoints.down("sm")]: {
@@ -128,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxCbMobile: {
     padding: 10,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: colors.snow,
     borderRadius: 10,
     height: "15%",
     marginTop: "3%",
@@ -155,7 +156,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     marginTop: "-3%",
   },
-
   subHeader: {
     marginTop: "2%",
     height: 200,
@@ -171,11 +171,6 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "space-between",
       padding: 3,
     },
-  },
-  carouselButtons: {
-    backgroundColor: "transparent",
-    borderWidth: 0,
-    color: "#c2c2c2",
   },
   page: {
     position: "relative",

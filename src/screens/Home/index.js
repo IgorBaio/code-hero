@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import Dimensions from "react-dimensions";
 import Footer from "../../components/Footer";
 import useStyles from "./styles";
+import colors from "../../utils/colors";
 
 function App(props) {
   const styles = useStyles()
@@ -110,7 +111,7 @@ function App(props) {
               />
               <Typography
                 component="span"
-                style={{ color: "#666", fontWeight: "bold", marginLeft: 10 }}
+                style={{ color: colors.gray, fontWeight: "bold", marginLeft: 10 }}
               >
                 {hero.name}
               </Typography>

@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import colors from "../../utils/colors";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   pageTitle: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontSize: 32,
     fontWeight: 800,
     alignSelf: "flex-start",
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   pageSubTitle: {
-    color: "#555555",
+    color: colors.darkSmoke,
     alignSelf: "flex-start",
     fontSize: 16,
     fontWeight: 800,

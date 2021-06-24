@@ -4,6 +4,7 @@ import useStyles from "./styles";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import colors from "../../../../utils/colors";
 
 const DATA_CAROUSEL = [
   { label: "Séries", value: "series" },
@@ -34,10 +35,10 @@ function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
                 className={styles.buttonText}
                 style={{
                   backgroundColor:
-                    optionClicked === item.value ? "#167ABC" : "#F2F2F2",
-                  color: optionClicked === item.value ? "#e5e5e5" : "#444",
+                    optionClicked === item.value ? colors.blue : colors.semiWhite,
+                  color: optionClicked === item.value ? colors.darkSnow : colors.semiGray,
                   border:
-                    optionClicked === item.value ? "2px solid #167ABC" : "",
+                    optionClicked === item.value ? `2px solid ${colors.blue}` : "",
                 }}
               >
                 {item.label}

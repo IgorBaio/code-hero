@@ -1,8 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
+import colors from "../../utils/colors";
 
 const useStyles = makeStyles((theme) => ({
   input: {
-    color: "#666",
+    color: colors.gray,
     width: "100%",
     height: 32,
     display: "flex",
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxInput: {
     display: "flex",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: colors.white,
     borderRadius: 4,
     opacity: 1,
     padding: "0px 12px",

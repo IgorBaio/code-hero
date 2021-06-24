@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import colors from "../../utils/colors";
 
 const useStyles = makeStyles((theme) => ({
   divCharacter: {
@@ -7,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     cursor: 'pointer',
     "&:hover": {
-      backgroundColor: "#F0141E",
+      backgroundColor: colors.redMarvel,
     },
   },
   divHeroData:{

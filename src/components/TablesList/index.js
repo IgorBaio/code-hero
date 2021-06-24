@@ -29,6 +29,7 @@ const StyledTableRow = withStyles((theme) => ({
     "&:nth-of-type(even)": {
       backgroundColor: "#e4e4e4",
     },
+    borderBottomWidth: 2
   },
 }))(TableRow);
 

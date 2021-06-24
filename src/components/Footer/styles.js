@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import colors from "../../utils/colors";
 
 const useStyles = makeStyles((theme) => ({
   boxContainer: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     zIndex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: colors.white,
     height: "9%",
     position: "absolute",
     width: "100vw",
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     zIndex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: colors.white,
     position: "absolute",
     width: "100vw",
     height: "24%",
@@ -69,12 +70,11 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "-3%",
     },
   },
-
   candidato: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: 400,
     "& strong": {
-      fontWeight: 800,
+      fontWeight: 'bold',
     },
     [theme.breakpoints.down("sm")]: {
       display: "flex",
@@ -91,10 +91,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   candidatoMobile: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: 400,
     "& strong": {
-      fontWeight: 800,
+      fontWeight: 'bold',
     },
     display: "flex",
     flexDirection: "column",
@@ -103,17 +103,17 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   userLabel: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: 400,
     "& strong": {
-      fontWeight: 800,
+      fontWeight: 'bold',
     },
   },
   userLabelMobile: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: 400,
     "& strong": {
-      fontWeight: 800,
+      fontWeight: 'bold',
     },
     width: "100%",
     alignSelf: "center",
@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
   boxCb: {
     marginLeft: 20,
     padding: 10,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: colors.snow,
     borderRadius: 10,
     height: "15%",
     [theme.breakpoints.down("sm")]: {
@@ -131,7 +131,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxCbMobile: {
     padding: 10,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: colors.snow,
     borderRadius: 10,
     height: "15%",
     marginTop: "3%",
@@ -174,11 +174,6 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "space-between",
       padding: 3,
     },
-  },
-  carouselButtons: {
-    backgroundColor: "transparent",
-    borderWidth: 0,
-    color: "#c2c2c2",
   },
   page: {
     position: "relative",

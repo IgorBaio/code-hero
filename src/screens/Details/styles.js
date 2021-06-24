@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import colors from "../../utils/colors";
 
 const useStyles = makeStyles((theme) => ({
   divContainer: {
@@ -20,14 +21,14 @@ const useStyles = makeStyles((theme) => ({
   name: {
     alignSelf: "center",
     marginLeft: "5%",
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: "bold",
   },
   nameMobile: {
     margin: "5%",
     marginBottom: "10%",
     marginLeft: "25%",
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: "bold",
   },
   boxData: {
@@ -38,10 +39,10 @@ const useStyles = makeStyles((theme) => ({
     height: 4,
     width: 4,
     borderRadius: 10,
-    backgroundColor: "#666",
+    backgroundColor: colors.gray,
   },
   textData: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: "bold",
     margin: 5,
   },
@@ -52,11 +53,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "20px",
   },
   notFoundDataText: {
-    color: "#555555",
+    color: colors.darkSmoke,
     fontWeight: "bold",
     margin: 5,
     textDecorationLine: "underline",
-    textDecorationColor: "#F0141E",
+    textDecorationColor: colors.redMarvel,
   },
 }));
 
