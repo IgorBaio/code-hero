@@ -2,7 +2,7 @@ import PageView from "../../components/PageView";
 import SubHeader from "../../components/SubHeader";
 import TablesList from "../../components/TablesList";
 import React, { useState, useEffect } from "react";
-import { Typography } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import Dimensions from "react-dimensions";
 import Footer from "../../components/Footer";
@@ -20,16 +20,12 @@ function App(props) {
     return items.map((i, ind) => {
       if (ind < quantity) {
         return (
-          <div
+          <Box
             key={i.name+i.resourceURI}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
+            className={styles.divHeroData}
           >
-            <text>{i.name}</text>
-          </div>
+            <Typography>{i.name}</Typography>
+          </Box>
         );
       }
       return false;
@@ -53,30 +49,30 @@ function App(props) {
     }
     const aux = arrayTemp.map((hero, index) => {
       const series = (
-        <div style={{ alignItems: "center" }}>
+        <Box style={{ alignItems: "center" }}>
           {hero.series?.items.length > 0 ? (
             getArrayData(hero.series.items, 3)
           ) : (
-            <text>Não há séries sobre o personagem</text>
+            <Typography>Não há séries sobre o personagem</Typography>
           )}
-        </div>
+        </Box>
       );
 
       const events = (
-        <div style={{ alignItems: "center" }}>
+        <Box style={{ alignItems: "center" }}>
           {hero.events?.items.length > 0 ? (
             getArrayData(hero.events.items, 3)
           ) : (
-            <text>Não há eventos sobre o personagem</text>
+            <Typography>Não há eventos sobre o personagem</Typography>
           )}
-        </div>
+        </Box>
       );
 
       return {
         id: hero.id,
         character: {
           content: (
-            <div
+            <Box
               className={styles.divCharacter}
               
               onClick={() => {
@@ -118,7 +114,7 @@ function App(props) {
               >
                 {hero.name}
               </Typography>
-            </div>
+            </Box>
           ),
         },
         series: {
@@ -142,10 +138,11 @@ function App(props) {
             title={"Busca de personagens"}
             subTitle={"Nome do personagem"}
             setNameFilter={setNameFilter}
+            containerWidth={props.containerWidth}
           />
         }
         pageContent={
-          <div className="App">
+          <Box className="App">
             <TablesList
               dataHeader={[
                 {
@@ -157,7 +154,7 @@ function App(props) {
               ]}
               dataRows={dataAux}
             />
-          </div>
+          </Box>
         }
         footer={
           <Footer setIndexPage={setIndexPage} quantityPage={quantityPage} indexPage={indexPage} />
@@ -173,6 +170,7 @@ function App(props) {
           title={"Busca de personagens"}
           subTitle={"Nome do personagem"}
           setNameFilter={setNameFilter}
+          containerWidth={props.containerWidth}
         />
       }
       pageContent={

@@ -3,11 +3,11 @@ import { Link, withRouter } from "react-router-dom";
 import useStyles from "./styles";
 import { Container, Box, Typography } from "@material-ui/core";
 import Logo from "../../svg/Logo";
-import "@brainhubeu/react-carousel/lib/style.css";
 import Dimensions from "react-dimensions";
+
 function PageView(props) {
   const hasHeader = props.hasHeader === true ? true : false;
-  const hasFooter = props.footer  || false;
+  const hasFooter = props.footer || false;
 
   const styles = useStyles();
 
@@ -90,18 +90,16 @@ function PageView(props) {
           </Box>
         </>
       )}
-      <Box className={[styles.page, props.stylePage]}>
+      <Box className={styles.page} style={props.stylePage}>
         <Container maxWidth="lg">
           <Box>{props.pageContent || null}</Box>
-      {hasFooter && (
-          
-        props.footer
-      )}
+          {hasFooter && props.footer}
         </Container>
       </Box>
-      
+
       <Box style={{ margin: 10, padding: 10 }} />
     </Box>
   );
 }
+
 export default Dimensions()(withRouter(PageView));

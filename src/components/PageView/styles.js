@@ -2,11 +2,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   container: {
+    margin:0,
     backgroundColor: "#E2E2E2",
     width: "100%",
-    height: "100%",
-    maxWidth: "100vw",
-    // maxHeight: "100vh",
+    height: "200vh",
   },
   header: {
     position: "relative",
@@ -68,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "-3%",
     },
   },
-
   candidato: {
     color: "#555555",
     fontWeight: 400,
@@ -167,15 +165,12 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
-    // alignItems: "center",
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
       padding: 3,
     },
-    // "& div": {
-    // },
   },
   carouselButtons: {
     backgroundColor: "transparent",
@@ -184,7 +179,7 @@ const useStyles = makeStyles((theme) => ({
   },
   page: {
     position: "relative",
-    height: "100",
+    height: "100%",
     zIndex: 100,
   },
 }));

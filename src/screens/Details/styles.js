@@ -1,51 +1,63 @@
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from "@material-ui/core/styles";
 
-
-const useStyles = makeStyles(theme => ({
-  divContainer:{
+const useStyles = makeStyles((theme) => ({
+  divContainer: {
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
-    height: '100vh'
+    height: "100vh",
   },
-  boxImageName:{ display: "flex" },  
-  textInput: {
-        marginTop: 10,
-        marginBottom: 10,
-        width: '100%',
-    },
-    name:{
-      margin: "20%",
-      marginLeft: "5%",
-      color: "#555555",
-      fontWeight: "bold",
-    },
-    nameMobile:{
-      margin: "5%",
-      marginLeft: "25%",
-      color: "#555555",
-      fontWeight: "bold",
-    },
-  
-    buttonText: {
-        fontFamily: 'PT Sans',
-        fontStyle: 'normal',
-        fontWeight: 800,
-        fontSize: 16,
-        textAlign: 'center',
-        [theme.breakpoints.down('sm')] : {
-          fontSize: 14
-        },
-        [theme.breakpoints.down('xs')] : {
-          fontSize: 12,
-  
-        }
-    },
-    carouselButtons: {
-        backgroundColor: 'transparent',
-        borderWidth: 0,
-        color: '#c2c2c2',
-    },
-}))
+  divHeroData:{
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    margin: 20,
+  },
+  boxImageName: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  name: {
+    alignSelf: "center",
+    marginLeft: "5%",
+    color: "#555555",
+    fontWeight: "bold",
+  },
+  nameMobile: {
+    margin: "5%",
+    marginBottom: "10%",
+    marginLeft: "25%",
+    color: "#555555",
+    fontWeight: "bold",
+  },
+  boxData: {
+    marginTop: "10px",
+    height: "100vh",
+  },
+  divCircleIcon: {
+    height: 4,
+    width: 4,
+    borderRadius: 10,
+    backgroundColor: "#666",
+  },
+  textData: {
+    color: "#555555",
+    fontWeight: "bold",
+    margin: 5,
+  },
+  divNotFoundData: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: "20px",
+  },
+  notFoundDataText: {
+    color: "#555555",
+    fontWeight: "bold",
+    margin: 5,
+    textDecorationLine: "underline",
+    textDecorationColor: "#F0141E",
+  },
+}));
 
-export default useStyles
+export default useStyles;

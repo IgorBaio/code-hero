@@ -1,14 +1,9 @@
 import { Box, Button, Typography } from "@material-ui/core";
 import React from "react";
-import Carousel, {
-  slidesToShowPlugin,
-  arrowsPlugin,
-} from "@brainhubeu/react-carousel";
-import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos";
-import ArrowBackIos from "@material-ui/icons/ArrowBackIos";
-import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
-import "@brainhubeu/react-carousel/lib/style.css";
 import useStyles from "./styles";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const DATA_CAROUSEL = [
   { label: "Séries", value: "series" },
@@ -18,71 +13,19 @@ const DATA_CAROUSEL = [
 
 function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
   const styles = useStyles();
+  const settings = {
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+  };
   return (
-    <Box
-      style={{
-        width: "90%",
-        alignItems: "center",
-        justifyContent: "center",
-        alignSelf: "center",
-      }}
-    >
-      <Carousel
-        plugins={[
-          {
-            resolve: slidesToShowPlugin,
-            options: {
-              numberOfSlides: 2.7,
-            },
-          },
-          {
-            resolve: arrowsPlugin,
-            options: {
-              arrowLeft: (
-                <button className={styles.carouselButtons}>
-                  <DoubleArrowIcon
-                    style={{
-                      transform: "rotate(180deg)",
-                      backgroundColor: "transparent",
-                    }}
-                  />{" "}
-                </button>
-              ),
-              arrowLeftDisabled: (
-                <button className={styles.carouselButtons}>
-                  <ArrowBackIos />
-                </button>
-              ),
-              arrowRight: (
-                <button className={styles.carouselButtons}>
-                  <DoubleArrowIcon />
-                </button>
-              ),
-              arrowRightDisabled: (
-                <button className={styles.carouselButtons}>
-                  <ArrowForwardIos />
-                </button>
-              ),
-              addArrowClickHandler: true,
-            },
-          },
-        ]}
-      >
+    <Box className={styles.boxContainer}>
+      <Slider {...settings} className={styles.slider}>
         {DATA_CAROUSEL.map((item, index) => {
           return (
             <Button
-              style={{
-                backgroundColor:
-                  optionClicked === item.value ? "#167ABC" : "#F2F2F2",
-                textTransform: "capitalize",
-                margin: 10,
-                borderRadius: 12,
-                justifyContent: "center",
-                alignItems: "center",
-                border: optionClicked === item.value ? "2px solid #167ABC" : "",
-                width: '40%',
-                height: 48,
-              }}
               onClick={() => {
                 setOptionClicked(item.value);
               }}
@@ -90,7 +33,11 @@ function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
               <Typography
                 className={styles.buttonText}
                 style={{
+                  backgroundColor:
+                    optionClicked === item.value ? "#167ABC" : "#F2F2F2",
                   color: optionClicked === item.value ? "#e5e5e5" : "#444",
+                  border:
+                    optionClicked === item.value ? "2px solid #167ABC" : "",
                 }}
               >
                 {item.label}
@@ -98,7 +45,7 @@ function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
             </Button>
           );
         })}
-      </Carousel>
+      </Slider>
     </Box>
   );
 }

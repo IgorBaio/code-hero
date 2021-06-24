@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  Input,
-  Box,
-} from "@material-ui/core";
+import { Input, Box } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import useStyles from "./styles";
 
@@ -19,7 +16,7 @@ export default function TextInput(props) {
           id={props.id}
           {...props}
         />
-        <SearchIcon className={styles.icon} />
+        <SearchIcon />
       </Box>
     </Box>
   );

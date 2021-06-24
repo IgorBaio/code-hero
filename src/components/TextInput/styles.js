@@ -5,12 +5,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#666",
     width: "100%",
     height: 32,
-
     display: "flex",
-
-    [theme.breakpoints.down("sm")]: {
-      display: "flex",
-    },
   },
   inputWrapper: {
     display: "flex",
@@ -25,44 +20,9 @@ const useStyles = makeStyles((theme) => ({
     opacity: 1,
     padding: "0px 12px",
     whiteSpace: "nowrap",
-    alignItems:'center',
-    width: '100%',
-    
-  },
-  icon: {
-    // backgroundColor: "#fff",
-    // marginLeft: "-40%",
-    // marginRight: "5%",
-    // border: "2px solid red",
-    // [theme.breakpoints.down("sm")]: {
-    //   marginLeft: "0",
-    //   alignSelf: "flex-end",
-    //   marginRight: "2%",
-    //   justifyContent: "flex-start",
-    //   marginTop: '%'
-    // },
-    // [theme.breakpoints.down("md")]: {
-    //   marginLeft: "0",
-    //   alignSelf: "flex-end",
-    //   marginRight: "2%",
-    //   justifyContent: "flex-start",
-    //   marginTop: '-12%'
-    // },
+    alignItems: "center",
+    width: "100%",
   },
 }));
 
-const style = {
-  label: {
-    color: "#c5c5c5",
-    fontFamily: "PT Sans",
-    fontWeight: 800,
-    textTransform: "uppercase",
-    fontSize: 12,
-  },
-  "&::placeholder": {
-    color: "#666",
-  },
-};
-
-export { style };
 export default useStyles;

@@ -1,16 +1,17 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    backgroundColor: "#E2E2E2",
-    width: "100%",
-    height: "100%",
-    maxWidth: "100vw",
-    maxHeight: "100vh",
+  boxContainer: {
+    width: "52%",
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
   },
-  header: {
-    position: "relative",
-    zIndex: 10,
+  pagination: {
+    alignSelf: "center",
+    width: "100%",
+    marginLeft:'50%',
+    marginRight:'50%',
   },
   headerMobile: {
     position: "relative",
@@ -181,7 +182,7 @@ const useStyles = makeStyles((theme) => ({
   },
   page: {
     position: "relative",
-    height: "100",
+    height: "100%",
     zIndex: 100,
   },
 }));

@@ -3,11 +3,12 @@ import useStyles from "./styles";
 import { Typography, Box } from "@material-ui/core";
 import TextInput from "../TextInput";
 
-export default function SubHeader({
+const SubHeader = ({
   title,
   subTitle,
   setNameFilter,
-}) {
+  containerWidth
+}) => {
   const styles = useStyles();
   
   return (
@@ -18,7 +19,7 @@ export default function SubHeader({
       <Typography align="left" className={styles.pageSubTitle}>
         {subTitle}
       </Typography>
-      <Box className={styles.boxTextInput}>
+      <Box className={styles.boxTextInput} style={containerWidth<=400 ? {marginLeft:'20%'}:{}}>
         <TextInput
           id="heroName"
           placeholder="Digite..."
@@ -31,3 +32,4 @@ export default function SubHeader({
     </Box>
   );
 }
+export default SubHeader;

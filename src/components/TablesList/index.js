@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Table,
   TableBody,
@@ -72,7 +72,6 @@ export default function TablesList(props) {
                       paddingTop: 15,
                       paddingBottom: 15,
                     };
-                    let styleTypography = {};
 
                     return (
                       <StyledTableCell
@@ -80,15 +79,8 @@ export default function TablesList(props) {
                         align={column.align || "left"}
                         scope="row"
                       >
-                        <Typography
-                          className={classes.contentText}
-                          style={styleTypography}
-                        >
-                          {typeof row[column.id].content == "function"
-                            ? row[column.id].content(
-                                props.customState ? props.customState : null
-                              )
-                            : row[column.id].content}
+                        <Typography className={classes.contentText}>
+                          {row[column.id].content}
                         </Typography>
                       </StyledTableCell>
                     );

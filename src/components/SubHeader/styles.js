@@ -7,8 +7,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-start",
     [theme.breakpoints.down("sm")]: {
       alignSelf: "center",
-      marginTop:'4%',
-      width:'100%',
+      marginTop: "4%",
+      width: "100%",
     },
   },
   pageTitle: {
@@ -37,21 +37,10 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "flex-start",
     [theme.breakpoints.down("sm")]: {
       alignSelf: "center",
-      maxWidth: "90%",
-      whiteSpace: 'nowrap',
-      maxHeight:32,
-
+      whiteSpace: "nowrap",
+      maxHeight: 32,
     },
   },
 }));
 
-const style = {
-  box: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-  },
-};
-export { style };
 export default useStyles;

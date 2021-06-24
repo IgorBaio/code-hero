@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-
 const useStyles = makeStyles({
     tableContainer: {
         marginBottom: 50,
@@ -18,7 +17,6 @@ const useStyles = makeStyles({
         borderBottomStyle: 'solid',
         backgroundColor: 'transparent',
         paddingBottom: 15,
-        // textTransform: 'uppercase'
     },
     header: {
         backgroundColor: 'transparent',
