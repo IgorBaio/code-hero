@@ -12,7 +12,7 @@ import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 import "@brainhubeu/react-carousel/lib/style.css";
 import Dimensions from "react-dimensions";
 
-function PageView({ quantityPage, setIndexPage, indexPage }) {
+function PageView({ quantityPage, setIndexPage, indexPage, containerWidth }) {
   const styles = useStyles();
 
   return (
@@ -31,7 +31,7 @@ function PageView({ quantityPage, setIndexPage, indexPage }) {
           {
             resolve: slidesToShowPlugin,
             options: {
-              numberOfSlides: 3.7,
+              numberOfSlides: containerWidth >=500 ? 7.7 :  3.7,
             },
           },
           {
@@ -71,7 +71,6 @@ function PageView({ quantityPage, setIndexPage, indexPage }) {
           return (
             <Button
               style={{
-                backgroundColor: "#F2F2F2",
                 textTransform: "capitalize",
                 margin: 10,
                 borderRadius: 24,
@@ -86,7 +85,7 @@ function PageView({ quantityPage, setIndexPage, indexPage }) {
                     indexPage ===index 
                         ? '#167ABC'
                         :
-                    "#E5E5E5",
+                    "#F5F5F5",
                 width: 40,
                 height: 32,
               }}

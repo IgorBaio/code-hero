@@ -6,6 +6,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
+    height: '100vh'
   },
   boxImageName:{ display: "flex" },  
   textInput: {
@@ -27,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     },
   
     buttonText: {
-        fontFamily: 'Mulish',
+        fontFamily: 'PT Sans',
         fontStyle: 'normal',
         fontWeight: 800,
         fontSize: 16,

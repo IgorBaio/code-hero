@@ -2,16 +2,19 @@ import PageView from "../../components/PageView";
 import SubHeader from "../../components/SubHeader";
 import TablesList from "../../components/TablesList";
 import React, { useState, useEffect } from "react";
-import DATA from "../../Data";
 import { Typography } from "@material-ui/core";
+import { useSelector } from "react-redux";
 import Dimensions from "react-dimensions";
 import Footer from "../../components/Footer";
+import useStyles from "./styles";
 
 function App(props) {
+  const styles = useStyles()
   const [dataAux, setDataAux] = useState([]);
   const [nameFilter, setNameFilter] = useState("");
   const [indexPage, setIndexPage] = useState(0);
   const [quantityPage, setQuantityPage] = useState(0);
+  const characters = useSelector(state=>state.character.characters.data.results)
 
   const getArrayData = (items, quantity) => {
     return items.map((i, ind) => {
@@ -34,16 +37,16 @@ function App(props) {
   };
 
   useEffect(() => {
-    const { results } = DATA.data;
-    setQuantityPage(Array.from(Array(results.length / 10).keys()));
+    
+    setQuantityPage(Array.from(Array(characters.length / 10).keys()));
     let arrayTemp = [];
 
     if (!!nameFilter) {
-      arrayTemp = results.filter((character, index) =>
+      arrayTemp = characters.filter((character, index) =>
         character.name.toLowerCase().includes(nameFilter.toLowerCase())
       );
     } else {
-      arrayTemp = results.filter(
+      arrayTemp = characters.filter(
         (character, index) =>
           index >= indexPage * 10 && index < (indexPage + 1) * 10
       );
@@ -74,11 +77,8 @@ function App(props) {
         character: {
           content: (
             <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
+              className={styles.divCharacter}
+              
               onClick={() => {
                 localStorage.setItem(
                   "pathImage",

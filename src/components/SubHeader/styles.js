@@ -5,8 +5,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-    // alignItems: "flex-start",
-    // alignSelf: "flex-start",
     [theme.breakpoints.down("sm")]: {
       alignSelf: "center",
       marginTop:'4%',
@@ -18,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 32,
     fontWeight: 800,
     alignSelf: "flex-start",
-    fontFamily: "Mulish",
+    fontFamily: "PT Sans",
     [theme.breakpoints.down("sm")]: {
       alignSelf: "center",
     },
@@ -28,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "flex-start",
     fontSize: 16,
     fontWeight: 800,
-    fontFamily: "Mulish",
+    fontFamily: "PT Sans",
     [theme.breakpoints.down("sm")]: {
       alignSelf: "center",
     },

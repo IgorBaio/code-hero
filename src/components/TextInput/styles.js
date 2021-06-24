@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 const style = {
   label: {
     color: "#c5c5c5",
-    fontFamily: "Mulish",
+    fontFamily: "PT Sans",
     fontWeight: 800,
     textTransform: "uppercase",
     fontSize: 12,

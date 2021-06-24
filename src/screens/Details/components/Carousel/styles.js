@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
         width: '100%',
     },
     buttonText: {
-        fontFamily: 'Mulish',
+        fontFamily: 'PT Sans',
         fontStyle: 'normal',
         fontWeight: 'bold',
         fontSize: 17,

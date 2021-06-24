@@ -76,11 +76,11 @@ function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
                   optionClicked === item.value ? "#167ABC" : "#F2F2F2",
                 textTransform: "capitalize",
                 margin: 10,
-                borderRadius: 24,
+                borderRadius: 12,
                 justifyContent: "center",
                 alignItems: "center",
                 border: optionClicked === item.value ? "2px solid #167ABC" : "",
-                width: 200,
+                width: '40%',
                 height: 48,
               }}
               onClick={() => {

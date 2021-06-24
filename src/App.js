@@ -1,17 +1,29 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Loading from "./components/Loading";
-import { Provider } from "react-redux";
-import { configureStore } from "./store/reducers/index";
+import {  useDispatch } from "react-redux";
+
+import { getDataFromApi } from "./Service";
+// import { useDispatch } from "react-redux";
+import { characterPopulate } from "./store/actions/character";
+
 
 const Home = lazy(() => import("./screens/Home"));
 const Details = lazy(() => import("./screens/Details"));
 
-const store = configureStore();
+
 
 const App = () => {
+const dispatch = useDispatch()
+  useEffect(()=>{
+    const teste = async () => {
+      const dataJson = await getDataFromApi()
+      console.log(dataJson)
+      dispatch(characterPopulate(dataJson))
+    }
+    teste()
+},[])
   return (
-    <Provider store={store}>
       <BrowserRouter basename={"/"}>
         <Suspense fallback={<Loading />}>
           <Switch>
@@ -22,7 +34,6 @@ const App = () => {
           </Switch>
         </Suspense>
       </BrowserRouter>
-    </Provider>
   );
 };
 

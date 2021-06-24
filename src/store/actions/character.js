@@ -7,6 +7,7 @@ export const characterName = (name) => {
   };
 };
 export const characterPopulate = (characters) => {
+  console.log('characters', characters)
   return {
     type: CHARACTER_POPULATE,
     payload: characters,
