@@ -32,7 +32,7 @@ function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
           {
             resolve: slidesToShowPlugin,
             options: {
-              numberOfSlides: 2,
+              numberOfSlides: 2.7,
             },
           },
           {

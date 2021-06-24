@@ -12,7 +12,7 @@ const DATA_CAROUSEL = [
   { label: "Revistas", value: "comics" },
 ];
 
-function BookDetails({ history, containerWidth }) {
+function HeroDetails({ history, containerWidth }) {
   const styles = useStyles();
   let location = useLocation();
   const { item, image } = location || null;
@@ -70,8 +70,9 @@ function BookDetails({ history, containerWidth }) {
             {optionClicked ? (
               state[optionClicked] && state[optionClicked].length > 0 ? (
                 state[optionClicked].map((i) => {
+                  console.log(i)
                   return (
-                    <div style={i.props.style}>
+                    <div key={i.key} style={i.props.style}>
                       <div
                         style={{
                           height: 4,
@@ -116,4 +117,4 @@ function BookDetails({ history, containerWidth }) {
   );
 }
 
-export default Dimensions()(BookDetails);
+export default Dimensions()(HeroDetails);

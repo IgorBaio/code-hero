@@ -31,7 +31,7 @@ function PageView({ quantityPage, setIndexPage, indexPage }) {
           {
             resolve: slidesToShowPlugin,
             options: {
-              numberOfSlides: 3.85,
+              numberOfSlides: 3.7,
             },
           },
           {
@@ -113,4 +113,4 @@ function PageView({ quantityPage, setIndexPage, indexPage }) {
     </Box>
   );
 }
-export default Dimensions()(withRouter(PageView));
+export default Dimensions()(PageView);

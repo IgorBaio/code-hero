@@ -9,10 +9,6 @@ import Footer from "../../components/Footer";
 
 function App(props) {
   const [dataAux, setDataAux] = useState([]);
-  const [dimension, setDimension] = useState({
-    width: props.containerWidth,
-    height: props.containerHeight,
-  });
   const [nameFilter, setNameFilter] = useState("");
   const [indexPage, setIndexPage] = useState(0);
   const [quantityPage, setQuantityPage] = useState(0);
@@ -22,6 +18,7 @@ function App(props) {
       if (ind < quantity) {
         return (
           <div
+            key={i.name+i.resourceURI}
             style={{
               display: "flex",
               flexDirection: "row",
@@ -55,22 +52,7 @@ function App(props) {
       const series = (
         <div style={{ alignItems: "center" }}>
           {hero.series?.items.length > 0 ? (
-            hero.series?.items?.map((i, ind) => {
-              if (ind < 3) {
-                return (
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                    }}
-                  >
-                    <text>{i.name}</text>
-                  </div>
-                );
-              }
-              return false;
-            })
+            getArrayData(hero.series.items, 3)
           ) : (
             <text>Não há séries sobre o personagem</text>
           )}
@@ -150,15 +132,7 @@ function App(props) {
     setDataAux(aux);
   }, [nameFilter, indexPage]);
 
-  useEffect(() => {
-    setDimension({
-      ...dimension,
-      width: props.containerWidth,
-      height: props.containerHeight,
-    });
-  }, [props.containerWidth, props.containerHeight]);
-
-  if (dimension.width <= 380) {
+  if (props.containerWidth <= 380) {
     return (
       <PageView
         hasHeader
@@ -185,7 +159,9 @@ function App(props) {
             />
           </div>
         }
-        footer={<Footer indexPage={indexPage} setIndexPage={setIndexPage} indexPage={indexPage} />}
+        footer={
+          <Footer setIndexPage={setIndexPage} quantityPage={quantityPage} indexPage={indexPage} />
+        }
       />
     );
   }
