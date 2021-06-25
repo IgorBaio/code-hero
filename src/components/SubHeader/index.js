@@ -19,7 +19,7 @@ const SubHeader = ({
       <Typography align="left" className={styles.pageSubTitle}>
         {subTitle}
       </Typography>
-      <Box className={styles.boxTextInput} style={containerWidth<=400 ? {marginLeft:'20%'}:{}}>
+      <Box className={styles.boxTextInput} style={containerWidth<=500 ? {marginLeft:'20%'}:{}}>
         <TextInput
           id="heroName"
           placeholder="Digite..."

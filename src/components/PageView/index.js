@@ -21,20 +21,20 @@ function PageView(props) {
         <>
           <Box
             className={
-              props.containerWidth <= 300
+              props.containerWidth <= 500
                 ? styles.bgHeaderMobile
                 : styles.bgHeader
             }
           ></Box>
           <Box
             className={
-              props.containerWidth <= 300 ? styles.headerMobile : styles.header
+              props.containerWidth <= 500 ? styles.headerMobile : styles.header
             }
           >
             <Container maxWidth="lg">
               <Box
                 className={
-                  props.containerWidth <= 300
+                  props.containerWidth <= 380
                     ? styles.headerTopMobile
                     : styles.headerTop
                 }
@@ -45,7 +45,7 @@ function PageView(props) {
                 </Link>
                 <Box
                   className={
-                    props.containerWidth <= 300
+                    props.containerWidth <= 500
                       ? styles.infoUserMobile
                       : styles.infoUser
                   }
@@ -53,7 +53,7 @@ function PageView(props) {
                   <Typography
                     component="span"
                     className={
-                      props.containerWidth <= 300
+                      props.containerWidth <= 500
                         ? styles.candidatoMobile
                         : styles.candidato
                     }
@@ -63,7 +63,7 @@ function PageView(props) {
                   </Typography>
                   <Box
                     className={
-                      props.containerWidth <= 300
+                      props.containerWidth <= 500
                         ? styles.boxCbMobile
                         : styles.boxCb
                     }
@@ -71,7 +71,7 @@ function PageView(props) {
                     <Typography
                       component="span"
                       className={
-                        props.containerWidth <= 300
+                        props.containerWidth <= 500
                           ? styles.userLabelMobile
                           : styles.userLabel
                       }

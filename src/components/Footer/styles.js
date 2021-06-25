@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "center",
+    paddingBottom:'20%'
   },
   pagination: {
     alignSelf: "center",

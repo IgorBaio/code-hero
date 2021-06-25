@@ -10,21 +10,20 @@ import useStyles from "./styles";
 import colors from "../../utils/colors";
 
 function App(props) {
-  const styles = useStyles()
+  const styles = useStyles();
   const [dataAux, setDataAux] = useState([]);
   const [nameFilter, setNameFilter] = useState("");
   const [indexPage, setIndexPage] = useState(0);
   const [quantityPage, setQuantityPage] = useState(0);
-  const characters = useSelector(state=>state.character.characters.data.results)
+  const characters = useSelector(
+    (state) => state.character.characters.data.results
+  );
 
   const getArrayData = (items, quantity) => {
     return items.map((i, ind) => {
       if (ind < quantity) {
         return (
-          <Box
-            key={i.name+i.resourceURI}
-            className={styles.divHeroData}
-          >
+          <Box key={i.name + i.resourceURI} className={styles.divHeroData}>
             <Typography>{i.name}</Typography>
           </Box>
         );
@@ -34,7 +33,6 @@ function App(props) {
   };
 
   useEffect(() => {
-    
     setQuantityPage(Array.from(Array(characters.length / 10).keys()));
     let arrayTemp = [];
 
@@ -75,7 +73,6 @@ function App(props) {
           content: (
             <Box
               className={styles.divCharacter}
-              
               onClick={() => {
                 localStorage.setItem(
                   "pathImage",
@@ -111,7 +108,11 @@ function App(props) {
               />
               <Typography
                 component="span"
-                style={{ color: colors.gray, fontWeight: "bold", marginLeft: 10 }}
+                style={{
+                  color: colors.gray,
+                  fontWeight: "bold",
+                  marginLeft: 10,
+                }}
               >
                 {hero.name}
               </Typography>
@@ -129,7 +130,7 @@ function App(props) {
     setDataAux(aux);
   }, [nameFilter, indexPage]);
 
-  if (props.containerWidth <= 380) {
+  if (props.containerWidth <= 500) {
     return (
       <PageView
         hasHeader
@@ -158,7 +159,11 @@ function App(props) {
           </Box>
         }
         footer={
-          <Footer setIndexPage={setIndexPage} quantityPage={quantityPage} indexPage={indexPage} />
+          <Footer
+            setIndexPage={setIndexPage}
+            quantityPage={quantityPage}
+            indexPage={indexPage}
+          />
         }
       />
     );
@@ -202,7 +207,11 @@ function App(props) {
         </div>
       }
       footer={
-        <Footer setIndexPage={setIndexPage} quantityPage={quantityPage} indexPage={indexPage} />
+        <Footer
+          setIndexPage={setIndexPage}
+          quantityPage={quantityPage}
+          indexPage={indexPage}
+        />
       }
     />
   );

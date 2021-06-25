@@ -34,11 +34,11 @@ function HeroDetails({ containerWidth }) {
       }}
       pageContent={
         <div className={styles.divContainer}>
-          <Box className={containerWidth <= 400 ? {} : styles.boxImageName}>
+          <Box className={containerWidth <= 500 ? {} : styles.boxImageName}>
             <img
               src={imageUri}
-              width={containerWidth <= 400 ? 200 : 250}
-              height={containerWidth <= 400 ? 200 : 250}
+              width={containerWidth <= 500 ? 200 : 250}
+              height={containerWidth <= 500 ? 200 : 250}
               style={{
                 margin: 40,
                 alignSelf: "center",
@@ -46,7 +46,7 @@ function HeroDetails({ containerWidth }) {
             />
             <h2
               className={
-                containerWidth <= 400 ? styles.nameMobile : styles.name
+                containerWidth <= 500 ? styles.nameMobile : styles.name
               }
             >
               {state.name}

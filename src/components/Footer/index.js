@@ -17,7 +17,7 @@ function PageView({ quantityPage, setIndexPage, indexPage, containerWidth }) {
   return (
     <Box
       className={styles.boxContainer}
-      style={{ margin: containerWidth <= 380 ? 10 : 40 }}
+      style={{ margin: containerWidth <= 500 ? 10 : 40 }}
     >
       <div className={classes.root}>
         <Pagination
