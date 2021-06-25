@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     margin:0,
     backgroundColor: colors.darkSnow,
     width: "100%",
-    height: "200vh",
+    height: "120vh",
   },
   header: {
     position: "relative",
