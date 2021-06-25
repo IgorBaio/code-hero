@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import colors from "../../utils/colors";
 
 const useStyles = makeStyles((theme) => ({
-  box: {
+  div: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
       alignSelf: "center",
     },
   },
-  boxTextInput: {
+  divTextInput: {
     display: "flex",
     width: "100%",
     alignSelf: "flex-start",

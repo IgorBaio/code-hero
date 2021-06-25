@@ -1,4 +1,3 @@
-import { Box, Typography } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import PageView from "../../components/PageView";
@@ -34,7 +33,7 @@ function HeroDetails({ containerWidth }) {
       }}
       pageContent={
         <div className={styles.divContainer}>
-          <Box className={containerWidth <= 500 ? {} : styles.boxImageName}>
+          <div className={containerWidth <= 500 ? {} : styles.divImageName}>
             <img
               src={imageUri}
               width={containerWidth <= 500 ? 200 : 250}
@@ -51,12 +50,12 @@ function HeroDetails({ containerWidth }) {
             >
               {state.name}
             </h2>
-          </Box>
+          </div>
           <Carousel
             optionClicked={optionClicked}
             setOptionClicked={setOptionClicked}
           />
-          <Box className={styles.boxData}>
+          <div className={styles.divData}>
             {optionClicked ? (
               state[optionClicked] && state[optionClicked].length > 0 ? (
                 state[optionClicked].map((i) => {
@@ -64,24 +63,24 @@ function HeroDetails({ containerWidth }) {
                   return (
                     <div key={i.key} className={styles.divHeroData}>
                       <div className={styles.divCircleIcon} />
-                      <Typography className={styles.textData}>
+                      <text className={styles.textData}>
                         {i.props.children.props.children}
-                      </Typography>
+                      </text>
                     </div>
                   );
                 })
               ) : (
                 <div className={styles.divNotFoundData}>
                   <div className={styles.divCircleIcon} />
-                  <Typography className={styles.notFoundDataText}>
+                  <text className={styles.notFoundDataText}>
                     Não há este tipo de dado sobre o personagem
-                  </Typography>
+                  </text>
                 </div>
               )
             ) : (
               false
             )}
-          </Box>
+          </div>
         </div>
       }
     />

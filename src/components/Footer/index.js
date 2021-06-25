@@ -1,6 +1,6 @@
 import React from "react";
 import useStyles from "./styles";
-import { Box, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { Pagination } from "@material-ui/lab";
 import Dimensions from "react-dimensions";
 
@@ -15,8 +15,8 @@ function PageView({ quantityPage, setIndexPage, indexPage, containerWidth }) {
   const styles = useStyles();
   const classes = customStyles();
   return (
-    <Box
-      className={styles.boxContainer}
+    <div
+      className={styles.divContainer}
       style={{ margin: containerWidth <= 500 ? 10 : 40 }}
     >
       <div className={classes.root}>
@@ -49,7 +49,7 @@ function PageView({ quantityPage, setIndexPage, indexPage, containerWidth }) {
           }}
         />
       </div>
-    </Box>
+    </div>
   );
 }
 

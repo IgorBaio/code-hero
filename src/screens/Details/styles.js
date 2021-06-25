@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     margin: 20,
   },
-  boxImageName: {
+  divImageName: {
     display: "flex",
     justifyContent: "center",
   },
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     color: colors.darkSmoke,
     fontWeight: "bold",
   },
-  boxData: {
+  divData: {
     marginTop: "10px",
     height: "100vh",
   },

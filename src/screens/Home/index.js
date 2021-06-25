@@ -2,7 +2,6 @@ import PageView from "../../components/PageView";
 import SubHeader from "../../components/SubHeader";
 import TablesList from "../../components/TablesList";
 import React, { useState, useEffect } from "react";
-import { Box, Typography } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import Dimensions from "react-dimensions";
 import Footer from "../../components/Footer";
@@ -23,9 +22,9 @@ function App(props) {
     return items.map((i, ind) => {
       if (ind < quantity) {
         return (
-          <Box key={i.name + i.resourceURI} className={styles.divHeroData}>
-            <Typography>{i.name}</Typography>
-          </Box>
+          <div key={i.name + i.resourceURI} className={styles.divHeroData}>
+            <text>{i.name}</text>
+          </div>
         );
       }
       return false;
@@ -48,30 +47,30 @@ function App(props) {
     }
     const aux = arrayTemp.map((hero, index) => {
       const series = (
-        <Box style={{ alignItems: "center" }}>
+        <div style={{ alignItems: "center" }}>
           {hero.series?.items.length > 0 ? (
             getArrayData(hero.series.items, 3)
           ) : (
-            <Typography>Não há séries sobre o personagem</Typography>
+            <text>Não há séries sobre o personagem</text>
           )}
-        </Box>
+        </div>
       );
 
       const events = (
-        <Box style={{ alignItems: "center" }}>
+        <div style={{ alignItems: "center" }}>
           {hero.events?.items.length > 0 ? (
             getArrayData(hero.events.items, 3)
           ) : (
-            <Typography>Não há eventos sobre o personagem</Typography>
+            <text>Não há eventos sobre o personagem</text>
           )}
-        </Box>
+        </div>
       );
 
       return {
         id: hero.id,
         character: {
           content: (
-            <Box
+            <div
               className={styles.divCharacter}
               onClick={() => {
                 localStorage.setItem(
@@ -106,7 +105,7 @@ function App(props) {
                 width={48}
                 height={48}
               />
-              <Typography
+              <text
                 component="span"
                 style={{
                   color: colors.gray,
@@ -115,8 +114,8 @@ function App(props) {
                 }}
               >
                 {hero.name}
-              </Typography>
-            </Box>
+              </text>
+            </div>
           ),
         },
         series: {
@@ -144,7 +143,7 @@ function App(props) {
           />
         }
         pageContent={
-          <Box className="App">
+          <div className="App">
             <TablesList
               dataHeader={[
                 {
@@ -156,7 +155,7 @@ function App(props) {
               ]}
               dataRows={dataAux}
             />
-          </Box>
+          </div>
         }
         footer={
           <Footer

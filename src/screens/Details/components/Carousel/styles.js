@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import colors from "../../../../utils/colors";
 
 const useStyles = makeStyles((theme) => ({
-  boxContainer: {
+  divContainer: {
     width: "90%",
     alignItems: "center",
     justifyContent: "center",

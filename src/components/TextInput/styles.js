@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     width: "70%",
     margin: 10,
   },
-  boxInput: {
+  divInput: {
     display: "flex",
     backgroundColor: colors.white,
     borderRadius: 4,

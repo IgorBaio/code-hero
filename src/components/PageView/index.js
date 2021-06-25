@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import useStyles from "./styles";
-import { Container, Box, Typography } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import Logo from "../../svg/Logo";
 import Dimensions from "react-dimensions";
 
@@ -16,23 +16,23 @@ function PageView(props) {
   };
 
   return (
-    <Box id="wrapper" className={styles.container}>
+    <div id="wrapper" className={styles.container}>
       {hasHeader && (
         <>
-          <Box
+          <div
             className={
               props.containerWidth <= 400
                 ? styles.bgHeaderMobile
                 : props.containerWidth <= 515 ? styles.bgHeaderSecondMobile : styles.bgHeader 
             }
-          ></Box>
-          <Box
+          ></div>
+          <div
             className={
               props.containerWidth <= 500 ? styles.headerMobile : styles.header
             }
           >
             <Container maxWidth="lg">
-              <Box
+              <div
                 className={
                   props.containerWidth <= 400
                     ? styles.headerTopMobile
@@ -43,62 +43,60 @@ function PageView(props) {
                   {" "}
                   <Logo className={styles.logoContent} />
                 </Link>
-                <Box
+                <div
                   className={
                     props.containerWidth <= 500
                       ? styles.infoUserMobile
                       : styles.infoUser
                   }
                 >
-                  <Typography
-                    component="span"
+                  <span
                     className={
                       props.containerWidth <= 500
                         ? styles.candidatoMobile
                         : styles.candidato
                     }
                   >
-                    <Typography component="strong">Igor Baio </Typography>
+                    <strong>Igor Baio </strong>
                     Teste de Front-end
-                  </Typography>
-                  <Box
+                  </span>
+                  <div
                     className={
                       props.containerWidth <= 500
-                        ? styles.boxCbMobile
-                        : styles.boxCb
+                        ? styles.divCbMobile
+                        : styles.divCb
                     }
                   >
-                    <Typography
-                      component="span"
+                    <span
                       className={
                         props.containerWidth <= 500
                           ? styles.userLabelMobile
                           : styles.userLabel
                       }
                     >
-                      <Typography component="strong">CB </Typography>
-                    </Typography>
-                  </Box>
-                </Box>
-              </Box>
+                      <strong>CB </strong>
+                    </span>
+                  </div>
+                </div>
+              </div>
               {props.subHeader && (
-                <Box className={styles.subHeader} style={props.containerWidth <= 500 ? {marginTop:'10%'}:{}}>
-                  <Box>{props.subHeader || null}</Box>
-                </Box>
+                <div className={styles.subHeader} style={props.containerWidth <= 500 ? {marginTop:'10%'}:{}}>
+                  <div>{props.subHeader || null}</div>
+                </div>
               )}
             </Container>
-          </Box>
+          </div>
         </>
       )}
-      <Box className={styles.page} style={props.stylePage}>
+      <div className={styles.page} style={props.stylePage}>
         <Container maxWidth="lg">
-          <Box>{props.pageContent || null}</Box>
+          <div>{props.pageContent || null}</div>
           {hasFooter && props.footer}
         </Container>
-      </Box>
+      </div>
 
-      <Box style={{ margin: 10, padding: 10 }} />
-    </Box>
+      <div style={{ margin: 10, padding: 10 }} />
+    </div>
   );
 }
 

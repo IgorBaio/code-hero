@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import React from "react";
 import useStyles from "./styles";
 import Slider from "react-slick";
@@ -41,7 +41,7 @@ function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
     prevArrow: <SampleArrow />,
   };
   return (
-    <Box className={styles.boxContainer}>
+    <div className={styles.divContainer}>
       <Slider {...settings} className={styles.slider}>
         {DATA_CAROUSEL.map((item, index) => {
           return (
@@ -73,7 +73,7 @@ function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
           );
         })}
       </Slider>
-    </Box>
+    </div>
   );
 }
 

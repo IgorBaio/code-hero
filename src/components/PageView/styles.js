@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "center",
     textAlign: "center",
   },
-  boxCb: {
+  divCb: {
     marginLeft: 20,
     padding: 10,
     backgroundColor: colors.snow,
@@ -136,7 +136,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "3%",
     },
   },
-  boxCbMobile: {
+  divCbMobile: {
     padding: 10,
     backgroundColor: colors.snow,
     borderRadius: 10,
