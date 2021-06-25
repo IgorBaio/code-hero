@@ -115,6 +115,9 @@ const useStyles = makeStyles((theme) => ({
     "& strong": {
       fontWeight: 800,
     },
+    '&:hover': {
+      color: colors.white
+    },
   },
   userLabelMobile: {
     color: colors.darkSmoke,
@@ -132,6 +135,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: colors.snow,
     borderRadius: 10,
     height: "15%",
+    cursor: 'pointer',
+    '&:hover': {
+      backgroundColor: colors.darkSmoke
+    },
     [theme.breakpoints.down("sm")]: {
       marginTop: "3%",
     },

@@ -28,6 +28,7 @@ function HeroDetails({ containerWidth }) {
   return (
     <PageView
       hasHeader
+      hasStyleButton
       stylePage={{
         height: "100vh",
       }}

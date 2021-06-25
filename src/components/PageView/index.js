@@ -8,6 +8,7 @@ import Dimensions from "react-dimensions";
 function PageView(props) {
   const hasHeader = props.hasHeader === true ? true : false;
   const hasFooter = props.footer || false;
+  const hasStyleButton = props.hasStyleButton === true ? true : false;
 
   const styles = useStyles();
 
@@ -23,7 +24,9 @@ function PageView(props) {
             className={
               props.containerWidth <= 400
                 ? styles.bgHeaderMobile
-                : props.containerWidth <= 515 ? styles.bgHeaderSecondMobile : styles.bgHeader 
+                : props.containerWidth <= 515
+                ? styles.bgHeaderSecondMobile
+                : styles.bgHeader
             }
           ></div>
           <div
@@ -60,27 +63,39 @@ function PageView(props) {
                     <strong>Igor Baio </strong>
                     Teste de Front-end
                   </span>
-                  <div
-                    className={
-                      props.containerWidth <= 500
-                        ? styles.divCbMobile
-                        : styles.divCb
-                    }
-                  >
-                    <span
+                  {hasStyleButton && (
+                    <div
                       className={
                         props.containerWidth <= 500
-                          ? styles.userLabelMobile
-                          : styles.userLabel
+                          ? styles.divCbMobile
+                          : styles.divCb
+                      }
+                      onClick={() =>
+                        props.history.push({
+                          pathname: "/estilo",
+                        })
                       }
                     >
-                      <strong>CB </strong>
-                    </span>
-                  </div>
+                      <span
+                        className={
+                          props.containerWidth <= 500
+                            ? styles.userLabelMobile
+                            : styles.userLabel
+                        }
+                      >
+                        <strong>CB </strong>
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
               {props.subHeader && (
-                <div className={styles.subHeader} style={props.containerWidth <= 500 ? {marginTop:'10%'}:{}}>
+                <div
+                  className={styles.subHeader}
+                  style={
+                    props.containerWidth <= 500 ? { marginTop: "10%" } : {}
+                  }
+                >
                   <div>{props.subHeader || null}</div>
                 </div>
               )}

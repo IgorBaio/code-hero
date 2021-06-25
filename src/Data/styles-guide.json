@@ -1,0 +1,73 @@
+{
+    "fonts":[
+        {
+            "value":"PT Sans",
+            "label": "font-primary"
+        },
+        {
+            "value":"Mulish",
+            "label": "font-secundary"
+        }
+    ],
+    "colors": [
+        {
+            "value": "#FFFFFF",
+            "label":"white"
+        },
+        {
+            "value": "#F2F2F2",
+            "label":"semi-white"
+        },
+        {
+            "value": "#666666",
+            "label":"gray"
+        },
+        {
+
+            "value": "#444",
+            "label":"semi-gray"
+        },
+        {
+
+            "value": "#C4C4C4",
+            "label":"light-gray"
+        },
+        {
+
+            "value": "#E5E5E5",
+            "label":"dark-snow"
+        },
+        {
+
+            "value": "#555555",
+            "label":"dark-smoke"
+        },
+        {
+
+            "value": "#8E8E8E",
+            "label":"smoke"
+        },
+        {
+
+            "value": "#F0141E",
+            "label":"red-marvel"
+        },
+        {
+
+            "value": "#F5F5F5",
+            "label":"snow"
+        },
+        {
+
+            "value": "#000",
+            "label":"black"
+        },
+        {
+
+            "value": "#167ABC",
+            "label":"blue"
+        }
+    ]
+    
+
+}

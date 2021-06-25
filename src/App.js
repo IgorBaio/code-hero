@@ -4,24 +4,21 @@ import Loading from "./components/Loading";
 import {  useDispatch } from "react-redux";
 
 import { getDataFromApi } from "./Service";
-// import { useDispatch } from "react-redux";
 import { characterPopulate } from "./store/actions/character";
-
+import Styles from "./screens/Styles";
 
 const Home = lazy(() => import("./screens/Home"));
 const Details = lazy(() => import("./screens/Details"));
 
-
-
 const App = () => {
 const dispatch = useDispatch()
   useEffect(()=>{
-    const teste = async () => {
+    const requestDataFromApi = async () => {
       const dataJson = await getDataFromApi()
       console.log(dataJson)
       dispatch(characterPopulate(dataJson))
     }
-    teste()
+    requestDataFromApi()
 },[])
   return (
       <BrowserRouter basename={"/"}>
@@ -30,7 +27,10 @@ const dispatch = useDispatch()
             <Route path={"/"} exact={true} component={Home} />
           </Switch>
           <Switch>
-            <Route path={"/details"} exact={true} component={Details} />
+            <Route path={"/detalhe"} exact={true} component={Details} />
+          </Switch>
+          <Switch>
+            <Route path={"/estilo"} exact={true} component={Styles} />
           </Switch>
         </Suspense>
       </BrowserRouter>

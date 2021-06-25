@@ -94,7 +94,7 @@ function App(props) {
                 localStorage.setItem("comics", JSON.stringify(comicsAux));
                 localStorage.setItem("name", hero.name);
                 props.history.push({
-                  pathname: "/details",
+                  pathname: "/detalhe",
                   hero,
                   image: `${hero.thumbnail.path}.${hero.thumbnail.extension}`,
                 });
@@ -133,7 +133,7 @@ function App(props) {
     return (
       <PageView
         hasHeader
-        TesteFooter
+        hasStyleButton
         subHeader={
           <SubHeader
             title={"Busca de personagens"}
@@ -170,6 +170,7 @@ function App(props) {
   return (
     <PageView
       hasHeader
+      hasStyleButton
       subHeader={
         <SubHeader
           title={"Busca de personagens"}
