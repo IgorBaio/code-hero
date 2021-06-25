@@ -12,7 +12,7 @@ const SubHeader = ({
   const styles = useStyles();
   
   return (
-    <Box className={styles.box}>
+    <Box className={styles.box} style={containerWidth<=500 ? {marginTop:'10%'}: {}}>
       <Typography align="left" className={styles.pageTitle}>
         {title}
       </Typography>

@@ -12,6 +12,23 @@ const DATA_CAROUSEL = [
   { label: "Revistas", value: "comics" },
 ];
 
+function SampleArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        display: "block",
+        borderRadius: 24,
+        boxShadow: "2px 3px 10px #666",
+        background: "#666",
+        elevation: 4,
+      }}
+      onClick={onClick}
+    />
+  );
+}
+
 function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
   const styles = useStyles();
   const settings = {
@@ -20,6 +37,8 @@ function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
     slidesToShow: 2,
     slidesToScroll: 1,
     adaptiveHeight: true,
+    nextArrow: <SampleArrow />,
+    prevArrow: <SampleArrow />,
   };
   return (
     <Box className={styles.boxContainer}>
@@ -35,10 +54,17 @@ function CarouselInfo({ history, optionClicked, setOptionClicked, indexPage }) {
                 className={styles.buttonText}
                 style={{
                   backgroundColor:
-                    optionClicked === item.value ? colors.blue : colors.semiWhite,
-                  color: optionClicked === item.value ? colors.darkSnow : colors.semiGray,
+                    optionClicked === item.value
+                      ? colors.blue
+                      : colors.semiWhite,
+                  color:
+                    optionClicked === item.value
+                      ? colors.darkSnow
+                      : colors.semiGray,
                   border:
-                    optionClicked === item.value ? `2px solid ${colors.blue}` : "",
+                    optionClicked === item.value
+                      ? `2px solid ${colors.blue}`
+                      : "",
                 }}
               >
                 {item.label}

@@ -21,9 +21,9 @@ function PageView(props) {
         <>
           <Box
             className={
-              props.containerWidth <= 500
+              props.containerWidth <= 400
                 ? styles.bgHeaderMobile
-                : styles.bgHeader
+                : props.containerWidth <= 515 ? styles.bgHeaderSecondMobile : styles.bgHeader 
             }
           ></Box>
           <Box
@@ -34,7 +34,7 @@ function PageView(props) {
             <Container maxWidth="lg">
               <Box
                 className={
-                  props.containerWidth <= 380
+                  props.containerWidth <= 400
                     ? styles.headerTopMobile
                     : styles.headerTop
                 }
@@ -82,7 +82,7 @@ function PageView(props) {
                 </Box>
               </Box>
               {props.subHeader && (
-                <Box className={styles.subHeader}>
+                <Box className={styles.subHeader} style={props.containerWidth <= 500 ? {marginTop:'10%'}:{}}>
                   <Box>{props.subHeader || null}</Box>
                 </Box>
               )}

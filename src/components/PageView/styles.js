@@ -35,7 +35,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: colors.white,
     position: "absolute",
     width: "100vw",
-    height: "24%",
+    height: "20%",
+  },
+  bgHeaderSecondMobile: {
+    top: 0,
+    left: 0,
+    zIndex: 1,
+    backgroundColor: colors.white,
+    position: "absolute",
+    width: "100vw",
+    height: "15%",
   },
   headerTop: {
     display: "flex",
